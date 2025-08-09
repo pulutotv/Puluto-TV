@@ -16,4 +16,5 @@ EXPOSE 10000
 
 # 6. Uygulamayı Gunicorn ile production modunda başlat
 # Render, PORT çevre değişkenini otomatik olarak sağlar
-CMD ["gunicorn", "--bind", "0.0.0.0:${PORT}", "app:app"]
+
+CMD ["/bin/sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} app:app"]
